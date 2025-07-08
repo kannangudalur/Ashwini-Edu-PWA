@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Educational Videos</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0d47a1">
+</head>
+<body>
+
+  <header>
+    <div class="header-overlay">
+      <img src="images/LOGO.png" alt="Logo" class="logo">
+      <h1>ASHWINI</h1>
+      <h2>Health Education Videos</h2>
+      <p class="subtitle">Empowering communities with knowledge</p>
+    </div>
+  </header>
+
+  <!-- Search box -->
+  <div class="search-container" style="text-align:center; margin: 15px 0;">
+    <input 
+      type="text" 
+      id="searchInput" 
+      placeholder="Search videos..." 
+      onkeyup="searchItems()" 
+      style="padding:10px; width:80%; max-width:400px; font-size:16px; border-radius:6px; border:1px solid #ccc;"
+    >
+  </div>
+
+  <div class="filter-buttons">
+    <button onclick="filterItems('all')" class="active">All</button>
+    <button onclick="filterItems('mother')">Mother</button>
+    <button onclick="filterItems('tb')">TB</button>
+    <button onclick="filterItems('general')">General</button>
+    <button onclick="filterItems('newborncare')">Newborn Care</button>
+  </div>
+
+  <!-- Grid -->
+  <div class="content-grid" id="contentGrid">
+
+    <!-- mother -->
+    <!-- Vid 1 -->
+    <div class="content-item mother">
+      <video controls>
+        <source src="videos/GestationalDiabetes.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>
+        Mother - Gestational Diabetes | கர்ப்பகால நீரிழிவு நோய்<br>
+        <a href="./video.html#GestationalDiabetes">Share/Watch Fullscreen</a>
+      </p>
+    </div>
+
+    <!-- Vid 2 -->
+    <div class="content-item mother">
+      <video controls>
+        <source src="videos/PreEclampsia.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>
+        Mother - Pre-eclampsia | கர்ப்பகால முந்தைய இக்ளாம்ப்சியா<br>
+        <a href="./video.html#PreEclampsia">Share/Watch Fullscreen</a>
+      </p>
+    </div>
+
+    <!-- new born care -->
+    <!-- Vid 3 -->
+    <div class="content-item newborncare">
+      <video controls>
+        <source src="videos/WarningsignsinNewbornsForMothersandCareTamil.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>
+        Warning Signs & Care in Newborns | புதிய பிறந்த குழந்தைகளின் எச்சரிக்கை மற்றும் பராமரிப்பு<br>
+        <a href="./video.html#WarningsignsinNewbornsForMothersandCareTamil">Share/Watch Fullscreen</a>
+      </p>
+    </div>
+
+    <!-- TB -->
+    <!-- Vid 4 -->
+    <div class="content-item tb">
+      <video controls>
+        <source src="videos/TuberculosisSymptomsandcauses.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>
+        Tuberculosis – Symptoms and causes | காசநோயின் அறிகுறிகள் மற்றும் காரணங்கள்<br>
+        <a href="./video.html#TuberculosisSymptomsandcauses">Share/Watch Fullscreen</a>
+      </p>
+    </div>
+
+    <!-- General -->
+    <!-- Vid 5 -->
+    <div class="content-item general">
+      <video controls>
+        <source src="videos/handwashing.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>
+        General - Hygiene Tips<br>
+        <a href="./video.html#handwashing">Share/Watch Fullscreen</a>
+      </p>
+    </div>
+
+    <!-- Vid 6 -->
+    <div class="content-item general">
+      <video controls>
+        <source src="videos/HowToCheckBP.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>
+        How to check BP<br>
+        <a href="./video.html#HowToCheckBP">Share/Watch Fullscreen</a>
+      </p>
+    </div>
+
+  </div>
+
+  <script src="js/script.js"></script>
+  <!-- Footer -->
+  <footer style="background-color: #f5f5f5; padding: 20px 10px; text-align: center; margin-top: 40px; font-size: 14px; color: #555; border-top: 1px solid #ccc;">
+    <div style="max-width: 800px; margin: auto;">
+      <p><strong>ASHWINI</strong> – Association for Health Welfare in the Nilgiris</p>
+      <p>Empowering tribal communities through education and healthcare</p>
+      <p>
+        2025 ASHWINI |
+        <a href="https://ashwini.org" target="_blank" style="color: #337ab7; text-decoration: none;">Visit our website</a> |
+        <a href="mailto:info@ashwini.org" style="color: #337ab7; text-decoration: none;">Contact Us</a>
+      </p>
+      <p style="margin-top: 10px; font-size: 13px; color: #888;">
+       Developed by <strong>ASHWINI - IT Department</strong> 
+      </p>
+    </div>
+  </footer>
+  <!-- Cache -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(reg => console.log('SW registered', reg.scope))
+          .catch(err => console.error('SW registration failed:', err));
+      });
+    }
+  </script>
+
+</body>
+</html>

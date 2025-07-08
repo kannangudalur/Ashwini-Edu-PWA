@@ -1,0 +1,67 @@
+/* video.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background: #E2D6C1;
+  color: #333;
+  margin: 20px;
+  padding: 0;
+}
+
+/* Center the <video> element horizontally
+   and make sure it scales nicely on small screens */
+#video-player {
+  display: block;      
+  margin: 40px auto;   
+  max-width: 100%;     
+  height: auto;        
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.video-player {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  text-align: center; 
+}
+
+.video-player video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.video-player a {
+  display: inline-block;
+  margin-top: 15px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.video-player a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  body {
+    margin: 10px;
+  }
+
+  .video-player {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}

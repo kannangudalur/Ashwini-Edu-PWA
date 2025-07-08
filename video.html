@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Video Player</title>
+  <link rel="stylesheet" href="css/video.css" />
+</head>
+<body>
+  <h1>Video Player</h1>
+
+  <div class="video-player">
+    <video id="video-player" controls width="640" height="360">
+      <source id="video-source" src="" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Optional: back link -->
+    <a href="index.html">← Back to Videos</a>
+  </div>
+
+  <script>
+    const videoPlayer = document.getElementById('video-player');
+    const videoSource = document.getElementById('video-source');
+
+    function loadVideoFromHash() {
+      let videoName = 'GestationalDiabetes';
+      if (window.location.hash) {
+        videoName = window.location.hash.substring(1);
+      }
+
+      if (!/^[\w-]+$/.test(videoName)) {
+        videoName = 'GestationalDiabetes';
+      }
+
+      const videoPath = `videos/${videoName}.mp4`;
+      videoSource.src = videoPath;
+      videoPlayer.load();
+    }
+
+    window.addEventListener('load', loadVideoFromHash);
+    window.addEventListener('hashchange', loadVideoFromHash);
+  </script>
+</body>
+</html>
